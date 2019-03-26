@@ -8,7 +8,7 @@
 function find_preg($str)
 {
     $result = 'не верно';
-    $pattern = '/^[a-f 0-9]{2}\:[a-f 0-9]{2}\:[a-f 0-9]{2}\:[a-f 0-9]{2}\:[a-f 0-9]{2}\:[a-f 0-9]{2}$/i';
+    $pattern = '/^[a-f0-9]{2}\:[a-f0-9]{2}\:[a-f0-9]{2}\:[a-f0-9]{2}\:[a-f0-9]{2}\:[a-f0-9]{2}$/i';
     if (preg_match($pattern, $str) === 1) {
         $result = 'верно';
     }
