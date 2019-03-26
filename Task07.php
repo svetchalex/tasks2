@@ -29,11 +29,11 @@ function find_php($str)
     return $result;
 }
 
-echo find_preg('mail@mail.ru');
-echo find_preg('aa@aa.info');
-echo find_preg('bug@@@com.ru');
-echo find_preg('val@val.a.a.a.a');
-echo find_php('mail@mail.ru');
-echo find_php('aa@aa.info');
-echo find_php('bug@@@com.ru');
-echo find_php('val@val.a.a.a.a');
+find_preg('mail@mail.ru');
+find_preg('aa@aa.info');
+find_preg('bug@@@com.ru');
+find_preg('val@val.a.a.a.a');
+find_php('mail@mail.ru');
+find_php('aa@aa.info');
+find_php('bug@@@com.ru');
+find_php('val@val.a.a.a.a');
