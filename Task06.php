@@ -34,7 +34,7 @@ find_preg('29/02/2000');
 find_preg('11/12/1688');
 find_preg('30-04-2003');
 find_preg('1/1/1899');
-echo find_php('29/02/2000');
+find_php('29/02/2000');
 find_php('11/12/1688');
 find_php('30-04-2003');
 find_php('1/1/1899');
