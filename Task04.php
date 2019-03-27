@@ -2,7 +2,7 @@
 /**
  * @param $str
  *
- * @return string
+ * @return bool
  */
 function find_preg($str)
 {
@@ -17,12 +17,12 @@ function find_preg($str)
 /**
  * @param $str
  *
- * @return string
+ * @return bool
  */
 function find_php($str)
 {
     $result = false;
-    if (filter_var($str, FILTER_VALIDATE_URL) !== false |
+    if (filter_var($str, FILTER_VALIDATE_URL) !== false ||
         filter_var('http://' . $str, FILTER_VALIDATE_URL) !== false) {
         $result = true;
     }

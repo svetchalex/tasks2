@@ -2,7 +2,7 @@
 /**
  * @param $str
  *
- * @return string
+ * @return bool
  */
 function find_preg($str)
 {
