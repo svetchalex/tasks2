@@ -6,10 +6,10 @@
  */
 function find_preg($str)
 {
-    $result = 'не верно';
+    $result = false;
     $pattern = '~^[^-\.\,_][a-z0-9.-_\S]{2,}@[^-\.\,_][a-z0-9.-_\S]{2,}\.[a-z0-9.-_\S]{2,}$~';
     if (preg_match($pattern, $str) === 1) {
-        $result = 'верно';
+        $result = true;
     }
     return $result;
 }
@@ -21,10 +21,10 @@ function find_preg($str)
  */
 function find_php($str)
 {
-    $result = 'не верно';
+    $result = false;
 
     if (filter_var($str,FILTER_VALIDATE_EMAIL)!==false) {
-        $result = 'верно';
+        $result = true;
     }
     return $result;
 }

@@ -6,10 +6,10 @@
  */
 function find_preg($str)
 {
-    $result = 'не верно';
+    $result = false;
     $pattern = '/^abcdefghsf\^dsdsbBBo\*18340$/';
     if (preg_match($pattern, $str) === 1) {
-        $result = 'верно';
+        $result = true;
     }
     return $result;
 }
@@ -21,10 +21,10 @@ function find_preg($str)
  */
 function find_php($str)
 {
-    $result = 'не верно';
+    $result = false;
     $pattern = 'abcdefghsf^dsdsbBBo*18340';
     if ($pattern === $str) {
-        $result = 'верно';
+        $result = true;
     }
     return $result;
 }

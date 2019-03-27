@@ -6,10 +6,10 @@
  */
 function find_preg($str)
 {
-    $result = 'не верно';
+    $result = false;
     $pattern = '~^(0[1-9]|[12][0-9]|3[01])\/0[1-9]|1[0-2]\/(1[6-9]|[2-9][0-9])[0-9][0-9]$~';
     if (preg_match($pattern, $str) === 1) {
-        $result = 'верно';
+        $result = true;
     }
     return $result;
 }
@@ -21,11 +21,11 @@ function find_preg($str)
  */
 function find_php($str)
 {
-    $result = 'не верно';
+    $result = false;
     $arr = explode('/', $str);
     if (count($arr) === 3 && $arr[0] < 32 && $arr[1] < 13 && $arr[2] > 1599 && $arr[2] < 10000 && strlen($arr[0]) === 2
         && strlen($arr[1]) === 2 && strlen($arr[2]) === 4 && checkdate($arr[1], $arr[0], $arr[2])) {
-        $result = 'верно';
+        $result = true;
     }
     return $result;
 }

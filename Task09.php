@@ -6,10 +6,10 @@
  */
 function find_preg($str)
 {
-    $result = 'не верно';
+    $result = false;
     $pattern = '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/';
     if (preg_match($pattern, $str) === 1) {
-        $result = 'верно';
+        $result = true;
     }
     return $result;
 }

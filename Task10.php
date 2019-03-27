@@ -6,10 +6,10 @@
  */
 function find_preg($str)
 {
-    $result = 'не верно';
+    $result = false;
     $pattern = '/^[1-9][0-9]{5}$/';
     if (preg_match($pattern, $str) === 1) {
-        $result = 'верно';
+        $result = true;
     }
     return $result;
 }
@@ -22,10 +22,10 @@ function find_preg($str)
 function find_php($str)
 {
 
-    $result = 'не верно';
+    $result = false;
 
     if (ctype_digit($str) === true && strpos($str, '0') !== 0 && strlen($str) === 6) {
-        $result = 'верно';
+        $result = true;
     }
     return $result;
 }
