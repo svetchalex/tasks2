@@ -6,12 +6,8 @@
  */
 function find_preg($str)
 {
-    $result = false;
-    $pattern = '~^(http\:\/\/|https\:\/\/){0,1}(www\.){0,1}[a-z0-9]{2,}\.[a-z0-9]{2,}(\.|\/)[a-z0-9\-\.]{2,}~';
-    if (preg_match($pattern, $str) === 1) {
-        $result = true;
-    }
-    return $result;
+    $pattern = '~^(https?\:\/\/)?(www\.)?[a-z0-9]{2,}\.[a-z0-9]{2,}(\.|\/)[a-z0-9\-\.]{2,}~';
+    return (preg_match($pattern, $str) === 1);
 }
 
 /**

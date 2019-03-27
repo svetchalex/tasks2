@@ -6,12 +6,8 @@
  */
 function find_preg($str)
 {
-    $result = false;
     $pattern = '/^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/';
-    if (preg_match($pattern, $str) === 1) {
-        $result = true;
-    }
-    return $result;
+    return (preg_match($pattern, $str) === 1);
 }
 
 /**
@@ -21,12 +17,7 @@ function find_preg($str)
  */
 function find_php($str)
 {
-    $result = false;
-
-    if (filter_var($str,FILTER_VALIDATE_IP)!==false) {
-        $result = true;
-    }
-    return $result;
+    return (filter_var($str, FILTER_VALIDATE_IP) !== false);
 }
 
 find_preg('127.0.0.1');

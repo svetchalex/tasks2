@@ -6,14 +6,9 @@
  */
 function find_preg($str)
 {
-    $result = false;
     $pattern = '/^\#[a-f0-9]{6}$/i';
-    if (preg_match($pattern, $str) === 1) {
-        $result = true;
-    }
-    return $result;
+    return (preg_match($pattern, $str) === 1);
 }
-
 
 
 find_preg('#FFFFFF');

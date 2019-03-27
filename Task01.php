@@ -6,12 +6,8 @@
  */
 function find_preg($str)
 {
-    $result = false;
     $pattern = '/^abcdefghsf\^dsdsbBBo\*18340$/';
-    if (preg_match($pattern, $str) === 1) {
-        $result = true;
-    }
-    return $result;
+    return (preg_match($pattern, $str) === 1);
 }
 
 /**
@@ -21,12 +17,8 @@ function find_preg($str)
  */
 function find_php($str)
 {
-    $result = false;
     $pattern = 'abcdefghsf^dsdsbBBo*18340';
-    if ($pattern === $str) {
-        $result = true;
-    }
-    return $result;
+    return ($pattern === $str);
 }
 
 find_preg('abcdefghsf^dsdsbBBo*18340');

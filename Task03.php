@@ -7,12 +7,8 @@
  */
 function find_preg($str)
 {
-    $result = false;
     $pattern = '/^[a-f0-9]{2}\:[a-f0-9]{2}\:[a-f0-9]{2}\:[a-f0-9]{2}\:[a-f0-9]{2}\:[a-f0-9]{2}$/i';
-    if (preg_match($pattern, $str) === 1) {
-        $result = true;
-    }
-    return $result;
+    return (preg_match($pattern, $str) === 1);
 }
 
 find_preg('01:32:54:67:89:AB');

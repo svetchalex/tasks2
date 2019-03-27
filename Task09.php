@@ -6,12 +6,8 @@
  */
 function find_preg($str)
 {
-    $result = false;
     $pattern = '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/';
-    if (preg_match($pattern, $str) === 1) {
-        $result = true;
-    }
-    return $result;
+    return (preg_match($pattern, $str) === 1);
 }
 
 find_preg('C00l_Pass');

@@ -6,13 +6,9 @@
  */
 function find_preg($str)
 {
-    $result = false;
     $pattern = '/^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}|
     \{[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}\}$/i';
-    if (preg_match($pattern, $str) === 1) {
-        $result = true;
-    }
-    return $result;
+    return (preg_match($pattern, $str) === 1);
 }
 
 /**
@@ -28,7 +24,13 @@ function find_php($str)
         $str = trim($str, '}');
     }
     $arr = explode('-', $str);
-    if(strlen($arr[0])!==8||strlen($arr[1])!==4||strlen($arr[2])!==4||strlen($arr[3])!==4||strlen($arr[4])!==12){
+    [$str1, $str2, $str3, $str4, $str5] = $arr;
+    if (strlen($str1) !== 8
+        || strlen($str2) !== 4
+        || strlen($str3) !== 4
+        || strlen($str4) !== 4
+        || strlen($str5) !== 12
+    ) {
         $result = false;
     }
     foreach ($arr as $item) {

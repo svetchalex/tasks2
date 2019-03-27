@@ -6,12 +6,8 @@
  */
 function find_preg($str)
 {
-    $result = false;
     $pattern = '/^[1-9][0-9]{5}$/';
-    if (preg_match($pattern, $str) === 1) {
-        $result = true;
-    }
-    return $result;
+    return (preg_match($pattern, $str) === 1);
 }
 
 /**
@@ -23,9 +19,10 @@ function find_php($str)
 {
 
     $result = false;
-
-    if (ctype_digit($str) === true && strpos($str, '0') !== 0 && strlen($str) === 6) {
-        $result = true;
+    if (is_int($str)) {
+        $result = ($str >= 100000
+            && $str <= 999999
+        );
     }
     return $result;
 }

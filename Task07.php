@@ -6,12 +6,8 @@
  */
 function find_preg($str)
 {
-    $result = false;
     $pattern = '~^[^-\.\,_][a-z0-9.-_\S]{2,}@[^-\.\,_][a-z0-9.-_\S]{2,}\.[a-z0-9.-_\S]{2,}$~';
-    if (preg_match($pattern, $str) === 1) {
-        $result = true;
-    }
-    return $result;
+    return (preg_match($pattern, $str) === 1);
 }
 
 /**
@@ -21,12 +17,7 @@ function find_preg($str)
  */
 function find_php($str)
 {
-    $result = false;
-
-    if (filter_var($str,FILTER_VALIDATE_EMAIL)!==false) {
-        $result = true;
-    }
-    return $result;
+    return (filter_var($str, FILTER_VALIDATE_EMAIL) !== false);
 }
 
 find_preg('mail@mail.ru');
